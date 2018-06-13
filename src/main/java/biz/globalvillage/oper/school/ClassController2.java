@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/oper/class")
+@RequestMapping("/oper/classes")
 public class ClassController2 {
 
     @PostMapping("/list")

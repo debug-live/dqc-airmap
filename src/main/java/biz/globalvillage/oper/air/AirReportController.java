@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/oper/report")
 public class AirReportController {
 
-    @PostMapping("/class/indoorAir/count")
+    @PostMapping("/classes/indoorAir/count")
     public Result countClassIndoorAir(){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
 
-    @PostMapping("/class/daily/indoorAir")
+    @PostMapping("/classes/daily/indoorAir")
     public Result getClassDailyIndoorAir(){
         return ResponseUtil.setDefaultSuccessResponse();
     }
