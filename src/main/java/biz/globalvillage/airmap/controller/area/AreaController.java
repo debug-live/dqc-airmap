@@ -1,7 +1,7 @@
 package biz.globalvillage.airmap.controller.area;
 
 import biz.globalvillage.airmap.bean.res.Result;
-import biz.globalvillage.airmap.entity.area.Area;
+import biz.globalvillage.common.entity.area.Area;
 import biz.globalvillage.airmap.param.area.GetAreaByLatAndLngParam;
 import biz.globalvillage.airmap.utils.resp.ResponseUtil;
 import org.springframework.web.bind.annotation.PostMapping;

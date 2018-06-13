@@ -1,4 +1,4 @@
-package biz.globalvillage.airmap.entity.area;
+package biz.globalvillage.common.entity.area;
 
 public class Area {
 
