@@ -1,6 +1,6 @@
 package biz.globalvillage.airmap.param.air;
 
-public class GetAirByAreaCodeParam {
+public class GetWeatherByAreaCodeParam {
 
     private String cityCode;
 
