@@ -18,7 +18,7 @@ import java.util.List;
 public class SchoolController {
 
     @PostMapping("/list")
-    public Result getSchoolList(SchoolListParam param){
+    public Result<List<SchoolListDTO>> getSchoolList(SchoolListParam param){
         List<SchoolListDTO> dtos = new ArrayList<>();
         return ResponseUtil.setSuccessDataResponse(dtos);
     }
