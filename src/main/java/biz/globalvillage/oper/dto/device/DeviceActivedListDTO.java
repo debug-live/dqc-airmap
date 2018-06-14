@@ -2,6 +2,8 @@ package biz.globalvillage.oper.dto.device;
 
 public class DeviceActivedListDTO {
 
+    private long deviceId;
+
     private String deviceSn;
 
     private String nickName;
@@ -12,6 +14,14 @@ public class DeviceActivedListDTO {
 
     //辅助字段
     private int isConnect;
+
+    public long getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(long deviceId) {
+        this.deviceId = deviceId;
+    }
 
     public String getDeviceSn() {
         return deviceSn;
