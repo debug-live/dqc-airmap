@@ -1,14 +1,22 @@
 package biz.globalvillage.oper.param.device;
 
-public class DeviceMcuListParam {
+import biz.globalvillage.airmap.param.page.PageParam;
+
+public class DeviceListForGeoParam extends PageParam {
 
     private long categoryId;
+
+    private Integer provinceId;
+
+    private Integer cityId;
 
     private String nickName;
 
     private String deviceSn;
 
-    private int isConnect;
+    private Integer isConnect;
+
+    private int hasAddress;
 
     public long getCategoryId() {
         return categoryId;
@@ -16,6 +24,22 @@ public class DeviceMcuListParam {
 
     public void setCategoryId(long categoryId) {
         this.categoryId = categoryId;
+    }
+
+    public Integer getProvinceId() {
+        return provinceId;
+    }
+
+    public void setProvinceId(Integer provinceId) {
+        this.provinceId = provinceId;
+    }
+
+    public Integer getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(Integer cityId) {
+        this.cityId = cityId;
     }
 
     public String getNickName() {
@@ -40,5 +64,13 @@ public class DeviceMcuListParam {
 
     public void setIsConnect(Integer isConnect) {
         this.isConnect = isConnect;
+    }
+
+    public int getHasAddress() {
+        return hasAddress;
+    }
+
+    public void setHasAddress(int hasAddress) {
+        this.hasAddress = hasAddress;
     }
 }

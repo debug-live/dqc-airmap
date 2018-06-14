@@ -70,7 +70,7 @@ public class DeviceController {
      * @return
      */
     @PostMapping("/geo/list")
-    public Result<List<DeviceGeoListDTO>> getDeviceGeoList(DeviceGeoListParam param){
+    public Result<List<DeviceGeoListDTO>> getDeviceGeoList(DeviceListForGeoParam param){
         List<DeviceGeoListDTO> list = new ArrayList<>();
         return ResponseUtil.setSuccessDataResponse(list);
     }
@@ -90,7 +90,7 @@ public class DeviceController {
      * @return
      */
     @PostMapping("/listForMcu")
-    public Result<List<DeviceMcuListDTO>> getDeviceListForMcu(DeviceMcuListParam param){
+    public Result<List<DeviceMcuListDTO>> getDeviceListForMcu(DeviceListForMcuParam param){
         List<DeviceMcuListDTO> list = new ArrayList<>();
         return ResponseUtil.setSuccessDataResponse(list);
     }
