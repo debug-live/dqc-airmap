@@ -7,10 +7,7 @@ import biz.globalvillage.common.entity.device.category.DeviceCategory;
 import biz.globalvillage.oper.dto.device.batch.DeviceBatchDetailDTO;
 import biz.globalvillage.oper.dto.device.batch.DeviceBatchListDTO;
 import biz.globalvillage.oper.dto.device.batch.DeviceBatchSnListDTO;
-import biz.globalvillage.oper.param.device.batch.DeviceBatchDetailParam;
-import biz.globalvillage.oper.param.device.batch.DeviceBatchExportParam;
-import biz.globalvillage.oper.param.device.batch.DeviceBatchListParam;
-import biz.globalvillage.oper.param.device.batch.DeviceBatchSnListParam;
+import biz.globalvillage.oper.param.device.batch.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,7 +43,7 @@ public class DeviceBatchController {
     }
 
     @PostMapping("/discardSn")
-    public Result discardSn(){
+    public Result discardSn(DeviceSnDiscardParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
