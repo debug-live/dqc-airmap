@@ -90,8 +90,8 @@ public class DeviceController {
      * @return
      */
     @PostMapping("/listForMcu")
-    public Result<List<DeviceMcuListDTO>> getDeviceListForMcu(DeviceListForMcuParam param){
-        List<DeviceMcuListDTO> list = new ArrayList<>();
+    public Result<List<DeviceListForMcuDTO>> getDeviceListForMcu(DeviceListForMcuParam param){
+        List<DeviceListForMcuDTO> list = new ArrayList<>();
         return ResponseUtil.setSuccessDataResponse(list);
     }
 

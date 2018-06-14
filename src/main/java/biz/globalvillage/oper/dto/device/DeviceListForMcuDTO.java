@@ -1,6 +1,6 @@
 package biz.globalvillage.oper.dto.device;
 
-public class DeviceMcuListDTO {
+public class DeviceListForMcuDTO {
 
     private long deviceId;
 
