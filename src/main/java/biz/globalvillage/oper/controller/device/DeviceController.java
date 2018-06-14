@@ -2,9 +2,14 @@ package biz.globalvillage.oper.controller.device;
 
 import biz.globalvillage.airmap.bean.res.Result;
 import biz.globalvillage.airmap.utils.resp.ResponseUtil;
+import biz.globalvillage.oper.dto.device.*;
+import biz.globalvillage.oper.param.device.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/oper/device")
@@ -15,13 +20,15 @@ public class DeviceController {
      * @return
      */
     @PostMapping("/list")
-    public Result getDeviceList(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<List<DeviceListDTO>> getDeviceList(DeviceListParam param){
+        List<DeviceListDTO> list = new ArrayList<>();
+        return ResponseUtil.setSuccessDataResponse(list);
     }
 
     @PostMapping("/detail")
-    public Result getDeviceDetail(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<DeviceDetailDTO> getDeviceDetail(DeviceDetailParam param){
+        DeviceDetailDTO dto = new DeviceDetailDTO();
+        return ResponseUtil.setSuccessDataResponse(dto);
     }
 
     /**
@@ -29,18 +36,18 @@ public class DeviceController {
      * @return
      */
     @PostMapping("/recycle")
-    public Result recycleDevice(){
+    public Result recycleDevice(DeviceRecycleParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
 
     @PostMapping("/clearAddress")
-    public Result clearDeviceAddress(){
+    public Result clearDeviceAddress(DeviceAddrClearParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
     @PostMapping("/manualFillLoction")
-    public Result manualFillLocation(){
+    public Result manualFillLocation(DeviceLocFillParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -53,8 +60,9 @@ public class DeviceController {
      * @return
      */
     @PostMapping("/getMgrPhoneBySn")
-    public Result getMgrPhoneBySn(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<DeviceMgrUserDTO> getMgrPhoneBySn(DeviceMgrUserGetParam param){
+        DeviceMgrUserDTO dto = new DeviceMgrUserDTO();
+        return ResponseUtil.setSuccessDataResponse(dto);
     }
 
     /**
@@ -62,8 +70,9 @@ public class DeviceController {
      * @return
      */
     @PostMapping("/geo/list")
-    public Result getDeviceGeoList(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<List<DeviceGeoListDTO>> getDeviceGeoList(DeviceGeoListParam param){
+        List<DeviceGeoListDTO> list = new ArrayList<>();
+        return ResponseUtil.setSuccessDataResponse(list);
     }
 
     /**
@@ -71,8 +80,9 @@ public class DeviceController {
      * @return
      */
     @PostMapping("/actived/list")
-    public Result getActivedDeviceList(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<List<DeviceActivedListDTO>> getActivedDeviceList(DeviceActivedListParam param){
+        List<DeviceActivedListDTO> list = new ArrayList<>();
+        return ResponseUtil.setSuccessDataResponse(list);
     }
 
     /**
@@ -80,8 +90,9 @@ public class DeviceController {
      * @return
      */
     @PostMapping("/listForMcu")
-    public Result getDeviceListForMcu(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<List<DeviceMcuListDTO>> getDeviceListForMcu(DeviceMcuListParam param){
+        List<DeviceMcuListDTO> list = new ArrayList<>();
+        return ResponseUtil.setSuccessDataResponse(list);
     }
 
     /**
@@ -89,8 +100,9 @@ public class DeviceController {
      * @return
      */
     @PostMapping("/listUsers")
-    public Result getDeviceUserList(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<List<DeviceUserListDTO>> getDeviceUserList(DeviceUserListParam param){
+        List<DeviceUserListDTO> list = new ArrayList<>();
+        return ResponseUtil.setSuccessDataResponse(list);
     }
 
     /**
@@ -99,7 +111,7 @@ public class DeviceController {
      * 工厂有的设备可能没有激活成功
      */
     @PostMapping("/checkActive")
-    public Result checkDeviceActive(){
+    public Result checkDeviceActive(DeviceActiveCheckParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -109,7 +121,7 @@ public class DeviceController {
      *
      */
     @PostMapping("/clearFactoryAddress")
-    public Result clearFactoryAddress(){
+    public Result clearFactoryAddress(DeviceFactoryAddrClearParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -118,7 +130,7 @@ public class DeviceController {
      *
      */
     @PostMapping("/returnFactory")
-    public Result returnFactory(){
+    public Result returnFactory(DeviceReturnFactoryParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -127,7 +139,7 @@ public class DeviceController {
      *
      */
     @PostMapping("/authToUser")
-    public Result authToUser(){
+    public Result authToUser(DeviceAuthToUserParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
