@@ -1,12 +1,26 @@
 package biz.globalvillage.oper.dto.device;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.time.LocalDateTime;
+
 public class DeviceUserListDTO {
 
     private String userPhone;
 
-    private int remainLifeSort;
+    private String sn;
 
-    private int osType;
+    private String appPhoneTypeName;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private LocalDateTime appRegDate;
+
+    private String fullAdderss;
+
+    private String companyName;
+
+    //辅助字段
+    private int appPhoneType;
 
     public String getUserPhone() {
         return userPhone;
@@ -16,19 +30,43 @@ public class DeviceUserListDTO {
         this.userPhone = userPhone;
     }
 
-    public int getRemainLifeSort() {
-        return remainLifeSort;
+    public String getSn() {
+        return sn;
     }
 
-    public void setRemainLifeSort(int remainLifeSort) {
-        this.remainLifeSort = remainLifeSort;
+    public void setSn(String sn) {
+        this.sn = sn;
     }
 
-    public int getOsType() {
-        return osType;
+    public String getAppPhoneTypeName() {
+        return appPhoneTypeName;
     }
 
-    public void setOsType(int osType) {
-        this.osType = osType;
+    public void setAppPhoneTypeName(String appPhoneTypeName) {
+        this.appPhoneTypeName = appPhoneTypeName;
+    }
+
+    public LocalDateTime getAppRegDate() {
+        return appRegDate;
+    }
+
+    public void setAppRegDate(LocalDateTime appRegDate) {
+        this.appRegDate = appRegDate;
+    }
+
+    public String getFullAdderss() {
+        return fullAdderss;
+    }
+
+    public void setFullAdderss(String fullAdderss) {
+        this.fullAdderss = fullAdderss;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 }

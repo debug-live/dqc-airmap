@@ -109,6 +109,8 @@ public class DeviceController {
      * 工厂后台->生产批次->复核激活设备
      *
      * 工厂有的设备可能没有激活成功
+     *
+     * 这个接口不能用json
      */
     @PostMapping("/checkActive")
     public Result checkDeviceActive(DeviceActiveCheckParam param){
