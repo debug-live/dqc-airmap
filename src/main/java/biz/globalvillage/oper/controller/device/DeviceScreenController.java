@@ -2,6 +2,9 @@ package biz.globalvillage.oper.controller.device;
 
 import biz.globalvillage.airmap.bean.res.Result;
 import biz.globalvillage.airmap.utils.resp.ResponseUtil;
+import biz.globalvillage.oper.dto.device.sreen.PageIdDTO;
+import biz.globalvillage.oper.dto.device.sreen.PageIdGerResultDTO;
+import biz.globalvillage.oper.param.device.screen.PageIdParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,14 +15,16 @@ public class DeviceScreenController {
 
 
     @PostMapping("/pageId/get")
-    public Result getPageId(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<PageIdDTO> getPageId(){
+        PageIdDTO dto = new PageIdDTO();
+        return ResponseUtil.setSuccessDataResponse(dto);
     }
 
 
     @PostMapping("/bind/result/get")
-    public Result getBindResult(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result getBindResult(PageIdParam param){
+        PageIdGerResultDTO dto = new PageIdGerResultDTO();
+        return ResponseUtil.setSuccessDataResponse(dto);
     }
 
 
