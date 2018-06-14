@@ -4,8 +4,6 @@ import biz.globalvillage.airmap.param.page.PageParam;
 
 public class DeviceGeoListParam extends PageParam {
 
-    private long modelId;
-
     private long categoryId;
 
     private Integer provinceId;
@@ -19,14 +17,6 @@ public class DeviceGeoListParam extends PageParam {
     private Integer isConnect;
 
     private int hasAddress;
-
-    public long getModelId() {
-        return modelId;
-    }
-
-    public void setModelId(long modelId) {
-        this.modelId = modelId;
-    }
 
     public long getCategoryId() {
         return categoryId;

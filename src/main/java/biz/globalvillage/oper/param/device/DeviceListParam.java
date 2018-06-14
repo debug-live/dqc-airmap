@@ -8,8 +8,6 @@ public class DeviceListParam extends PageParam {
 
     private long categoryId;
 
-    private long modelId;
-
     private String nickName;
 
     private String deviceSn;
@@ -40,14 +38,6 @@ public class DeviceListParam extends PageParam {
 
     public void setCategoryId(long categoryId) {
         this.categoryId = categoryId;
-    }
-
-    public long getModelId() {
-        return modelId;
-    }
-
-    public void setModelId(long modelId) {
-        this.modelId = modelId;
     }
 
     public String getNickName() {
