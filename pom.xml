@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>biz.globalvillage</groupId>
-    <artifactId>dqc-airmap</artifactId>
+    <artifactId>dqc-cloud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>dqc-airmap</name>
+    <name>dqc-cloud</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>

@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/oper/dealer")
 public class DealerController {
@@ -24,7 +26,7 @@ public class DealerController {
     }
 
     @PostMapping("/list")
-    public Result<DealerListDTO> getDealerList(DealerListParam param){
+    public Result<List<DealerListDTO>> getDealerList(DealerListParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -34,7 +36,7 @@ public class DealerController {
     }
 
     @PostMapping("/lock")
-    public Result lockDealer(DealerLockParam param){
+    public Result<Boolean> lockDealer(DealerLockParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
