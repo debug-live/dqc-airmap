@@ -2,6 +2,14 @@ package biz.globalvillage.oper.controller.dealer;
 
 import biz.globalvillage.airmap.bean.res.Result;
 import biz.globalvillage.airmap.utils.resp.ResponseUtil;
+import biz.globalvillage.oper.dto.dealer.DealerByPhoneDTO;
+import biz.globalvillage.oper.dto.dealer.DealerDetailDTO;
+import biz.globalvillage.oper.dto.dealer.DealerLatAndLngDTO;
+import biz.globalvillage.oper.dto.dealer.DealerListDTO;
+import biz.globalvillage.oper.param.dealer.DealerDeatailParam;
+import biz.globalvillage.oper.param.dealer.DealerListParam;
+import biz.globalvillage.oper.param.dealer.DealerLockParam;
+import biz.globalvillage.oper.param.dealer.SaveDealerParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,22 +19,22 @@ import org.springframework.web.bind.annotation.RestController;
 public class DealerController {
 
     @PostMapping("/save")
-    public Result saveDealer(){
+    public Result<Boolean> saveDealer(SaveDealerParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
     @PostMapping("/list")
-    public Result getDealerList(){
+    public Result<DealerListDTO> getDealerList(DealerListParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
     @PostMapping("/detail")
-    public Result getDealerDetail(){
+    public Result<DealerDetailDTO> getDealerDetail(DealerDeatailParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
     @PostMapping("/lock")
-    public Result lockDealer(){
+    public Result lockDealer(DealerLockParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -35,7 +43,7 @@ public class DealerController {
      *
      */
     @PostMapping("/getLatAndLng")
-    public Result getDealerLatAndLng(){
+    public Result<DealerLatAndLngDTO> getDealerLatAndLng(){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -44,7 +52,7 @@ public class DealerController {
      * @return
      */
     @PostMapping("/find/by/phone")
-    public Result getDealerByPhone(){
+    public Result<DealerByPhoneDTO> getDealerByPhone(){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
