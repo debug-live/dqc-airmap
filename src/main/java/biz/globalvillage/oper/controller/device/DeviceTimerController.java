@@ -2,9 +2,15 @@ package biz.globalvillage.oper.controller.device;
 
 import biz.globalvillage.airmap.bean.res.Result;
 import biz.globalvillage.airmap.utils.resp.ResponseUtil;
+import biz.globalvillage.oper.dto.device.timer.DeviceTimerDetailDTO;
+import biz.globalvillage.oper.dto.device.timer.DeviceTimerListDTO;
+import biz.globalvillage.oper.param.device.timer.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -16,28 +22,30 @@ import org.springframework.web.bind.annotation.RestController;
 public class DeviceTimerController {
 
     @PostMapping("/list")
-    public Result getDeviceTimerList(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<List<DeviceTimerListDTO>> getDeviceTimerList(DeviceTimerListParam param){
+        List<DeviceTimerListDTO> list = new ArrayList<>();
+        return ResponseUtil.setSuccessDataResponse(list);
     }
 
     @PostMapping("/add")
-    public Result addDeviceTimer(){
+    public Result addDeviceTimer(DeviceTimerAddParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
     @PostMapping("/modify")
-    public Result modifyDeviceTimer(){
+    public Result modifyDeviceTimer(DeviceTimerModifyParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
     @PostMapping("/del")
-    public Result delDeviceTimer(){
+    public Result delDeviceTimer(DeviceTimerDelParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
     @PostMapping("/detail")
-    public Result getDeviceDetail(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<DeviceTimerDetailDTO> getDeviceDetail(DeviceTimerDetailParam param){
+        DeviceTimerDetailDTO dto = new DeviceTimerDetailDTO();
+        return ResponseUtil.setSuccessDataResponse(dto);
     }
 
 
@@ -49,7 +57,7 @@ public class DeviceTimerController {
      *
      */
     @PostMapping("/delAllTimerByDeviceId")
-    public Result delAllTimerByDeviceId(){
+    public Result delAllTimerByDeviceId(DeviceTimeDelAllParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 }
