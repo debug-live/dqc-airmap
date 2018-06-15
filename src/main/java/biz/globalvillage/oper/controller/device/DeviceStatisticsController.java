@@ -2,6 +2,7 @@ package biz.globalvillage.oper.controller.device;
 
 import biz.globalvillage.airmap.bean.res.Result;
 import biz.globalvillage.airmap.utils.resp.ResponseUtil;
+import biz.globalvillage.oper.param.device.statistics.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +16,7 @@ public class DeviceStatisticsController {
      * @return
      */
     @PostMapping("/getConnReport")
-    public Result getDeviceConnReport(){
+    public Result getDeviceConnReport(DeviceConnReportParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
