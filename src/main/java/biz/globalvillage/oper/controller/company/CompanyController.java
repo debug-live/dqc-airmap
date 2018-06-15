@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/oper/company")
 public class CompanyController {
@@ -20,7 +22,7 @@ public class CompanyController {
     }
 
     @PostMapping("/list")
-    public Result<CompanyListDTO> getCompanyList(CompanyListParam param){
+    public Result<List<CompanyListDTO>> getCompanyList(CompanyListParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 

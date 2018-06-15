@@ -2,6 +2,9 @@ package biz.globalvillage.oper.controller.factory;
 
 import biz.globalvillage.airmap.bean.res.Result;
 import biz.globalvillage.airmap.utils.resp.ResponseUtil;
+import biz.globalvillage.oper.dto.factory.*;
+import biz.globalvillage.oper.param.dealer.SaveDealerParam;
+import biz.globalvillage.oper.param.factory.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,35 +14,38 @@ import org.springframework.web.bind.annotation.RestController;
 public class FactoryController {
 
     @PostMapping("/save")
-    public Result saveFactory(){
+    public Result<Boolean> saveFactory(SaveDealerParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
     @PostMapping("/list")
-    public Result getFactoryList(){
+    public Result<FactoryListDTO> getFactoryList(FactoryListParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
     @PostMapping("/detail")
-    public Result getFactoryDetail(){
+    public Result<FactoryDetialDTO> getFactoryDetail(FactoryDetailParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
     @PostMapping("/lock")
-    public Result lockFactory(){
+    public Result<Boolean> lockFactory(FactoryDetailParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
+    @Deprecated
     @PostMapping("/binders/list")
     public Result getFactoryBinderList(){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
+    @Deprecated
     @PostMapping("/bindUser")
     public Result bindUser(){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
+    @Deprecated
     @PostMapping("/unbindUser")
     public Result unbindUser(){
         return ResponseUtil.setDefaultSuccessResponse();
@@ -47,22 +53,22 @@ public class FactoryController {
 
 
     @PostMapping("/bindCompany")
-    public Result bindCompany(){
+    public Result<Boolean> bindCompany(BindCompanyParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
     @PostMapping("/listCanBindCompanys")
-    public Result listCanBindCompanys(){
+    public Result<CanBindCompanyListDTO> listCanBindCompanys(CanBindCompanyListParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
-    @PostMapping("/listBindedCompanys")
-    public Result listBindedCompanys(){
+    @PostMapping("/listBoundCompanys")
+    public Result<BoundCompanyListDTO> listBoundCompanys(BoundCompanyListParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
-    @PostMapping("/listBindedFactorys")
-    public Result listBindedFactorys(){
+    @PostMapping("/listBoundFactorys")
+    public Result<BoundFactoryListDTO> listBoundFactorys(BoundFactoryListParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -82,7 +88,7 @@ public class FactoryController {
      * sn打开后，可以被设备获取、烧录
      */
     @PostMapping("/openDeviceSnForFetch")
-    public Result openDeviceSnForFetch(){
+    public Result openDeviceSnForFetch(DeviceSnForFetchParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -92,7 +98,7 @@ public class FactoryController {
      *
      */
     @PostMapping("/resetDeviceSnForFetch")
-    public Result resetDeviceSnForFetch(){
+    public Result resetDeviceSnForFetch(DeviceSnForFetchParam para){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 

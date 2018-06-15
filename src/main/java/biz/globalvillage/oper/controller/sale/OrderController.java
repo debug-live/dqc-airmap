@@ -33,7 +33,7 @@ public class OrderController {
     }
 
     @PostMapping("/list/device")
-    public Result<DeviceListDTO> getOrderDeviceList(DeviceListParam param){
+    public Result<List<DeviceListDTO>> getOrderDeviceList(DeviceListParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
