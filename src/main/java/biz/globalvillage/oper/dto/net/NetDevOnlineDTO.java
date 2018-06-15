@@ -10,6 +10,9 @@ public class NetDevOnlineDTO {
 
     private int onLineStop;
 
+    public NetDevOnlineDTO() {
+    }
+
     public NetDevOnlineDTO(int total, int offline, int onLineRun, int onLineStop) {
         this.total = total;
         this.offline = offline;

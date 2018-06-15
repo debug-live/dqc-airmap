@@ -12,6 +12,9 @@ public class NetTotalViewDTO {
 
     private String totalAmount;
 
+    public NetTotalViewDTO() {
+    }
+
     public NetTotalViewDTO(int netNum, int netDeviceNum, int netDeviceBindCount, int netOrderNum, String totalAmount) {
         this.netNum = netNum;
         this.netDeviceNum = netDeviceNum;
