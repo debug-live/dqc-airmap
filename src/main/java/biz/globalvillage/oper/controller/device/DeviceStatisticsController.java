@@ -2,6 +2,7 @@ package biz.globalvillage.oper.controller.device;
 
 import biz.globalvillage.airmap.bean.res.Result;
 import biz.globalvillage.airmap.utils.resp.ResponseUtil;
+import biz.globalvillage.oper.dto.statistics.*;
 import biz.globalvillage.oper.param.device.statistics.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,8 @@ public class DeviceStatisticsController {
      */
     @PostMapping("/getConnReport")
     public Result getDeviceConnReport(DeviceConnReportParam param){
-        return ResponseUtil.setDefaultSuccessResponse();
+        DeviceConnReportDTO dto = new DeviceConnReportDTO();
+        return ResponseUtil.setSuccessDataResponse(dto);
     }
 
     /**
@@ -26,7 +28,8 @@ public class DeviceStatisticsController {
      */
     @PostMapping("/getAllGisDev/onlineCount")
     public Result getAllGisDevOnlineCount(){
-        return ResponseUtil.setDefaultSuccessResponse();
+        DeviceGisOnlineDTO dto = new DeviceGisOnlineDTO();
+        return ResponseUtil.setSuccessDataResponse(dto);
     }
 
     /**
@@ -35,7 +38,8 @@ public class DeviceStatisticsController {
      */
     @PostMapping("/getAllGisDev/view")
     public Result getAllGisDevView(){
-        return ResponseUtil.setDefaultSuccessResponse();
+        DeviceGisViewDTO dto = new DeviceGisViewDTO();
+        return ResponseUtil.setSuccessDataResponse(dto);
     }
 
     /**
@@ -44,7 +48,8 @@ public class DeviceStatisticsController {
      */
     @PostMapping("/distributionByProvince")
     public Result getDeviceDistrbutionByProvince(){
-        return ResponseUtil.setDefaultSuccessResponse();
+        DeviceDistribByProvinceDTO dto = new DeviceDistribByProvinceDTO();
+        return ResponseUtil.setSuccessDataResponse(dto);
     }
 
     /**
@@ -53,6 +58,7 @@ public class DeviceStatisticsController {
      */
     @PostMapping("/generalCount")
     public Result generalCount(){
-        return ResponseUtil.setDefaultSuccessResponse();
+        DeviceGeneralCountDTO dto = new DeviceGeneralCountDTO();
+        return ResponseUtil.setSuccessDataResponse(dto);
     }
 }
