@@ -2,9 +2,19 @@ package biz.globalvillage.oper.controller.dealer;
 
 import biz.globalvillage.airmap.bean.res.Result;
 import biz.globalvillage.airmap.utils.resp.ResponseUtil;
+import biz.globalvillage.oper.dto.dealer.DeviceDistributeDTO;
+import biz.globalvillage.oper.dto.dealer.CountDeviceNumsWithModelDTO;
+import biz.globalvillage.oper.dto.dealer.StrainerCostListDTO;
+import biz.globalvillage.oper.param.dealer.CountDeviceOnOffLinesNumParam;
+import biz.globalvillage.oper.param.dealer.CountDeviceTotalParam;
+import biz.globalvillage.oper.param.dealer.DeviceNumIncreListParam;
+import biz.globalvillage.oper.param.dealer.StrainerCostListParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/oper/dealer/oper")
@@ -14,8 +24,8 @@ public class DealerOperController {
      * 我的运营->整体运营->最上面的统计（设备总数、新风机、空气复原机）
      *
      */
-    @PostMapping("/device/total/count")
-    public Result countDeviceTotal(){
+    @PostMapping("/device/total")
+    public Result<Map<String, Integer>> countDeviceTotal(CountDeviceTotalParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -23,8 +33,8 @@ public class DealerOperController {
      * 我的运营->整体运营->最下面的统计（离线总数、在线开机、关机）
      *
      */
-    @PostMapping("/onoff/device/nums/count")
-    public Result countDeviceOnOffLinesNums(){
+    @PostMapping("/onoff/device/nums")
+    public Result<Map<String, Integer>> countDeviceOnOffLinesNums(CountDeviceOnOffLinesNumParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -33,7 +43,7 @@ public class DealerOperController {
      *
      */
     @PostMapping("/device/distribute")
-    public Result deviceDistribute(){
+    public Result<List<DeviceDistributeDTO>> deviceDistribute(){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -44,7 +54,7 @@ public class DealerOperController {
      *
      */
     @PostMapping("/deviceNum/incres")
-    public Result deviceNumIncres(){
+    public Result<Map<String, Integer>> deviceNumIncreList(DeviceNumIncreListParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -53,7 +63,7 @@ public class DealerOperController {
      *
      */
     @PostMapping("/strainer/cost/view")
-    public Result strainerCostView(){
+    public Result<Map<String, Integer>> strainerCostView(){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -62,7 +72,7 @@ public class DealerOperController {
      *
      */
     @PostMapping("/countDeviceNumsWithModel")
-    public Result countDeviceNumsWithModel(){
+    public Result<List<CountDeviceNumsWithModelDTO>> countDeviceNumsWithModel(){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -71,7 +81,7 @@ public class DealerOperController {
      *
      */
     @PostMapping("/strainer/cost/list")
-    public Result strainerCostList(){
+    public Result<StrainerCostListDTO> strainerCostList(StrainerCostListParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -80,7 +90,7 @@ public class DealerOperController {
      *
      */
     @PostMapping("/strainer/cost/detail")
-    public Result strainerCostDetail(){
+    public Result<StrainerCostListDTO> strainerCostDetail(StrainerCostListParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
