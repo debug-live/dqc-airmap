@@ -2,9 +2,21 @@ package biz.globalvillage.oper.controller.net;
 
 import biz.globalvillage.airmap.bean.res.Result;
 import biz.globalvillage.airmap.utils.resp.ResponseUtil;
+import biz.globalvillage.oper.dto.net.NetDevOnlineDTO;
+import biz.globalvillage.oper.dto.net.NetOperGeneralDTO;
+import biz.globalvillage.oper.dto.net.NetOperIncrDTO;
+import biz.globalvillage.oper.dto.net.NetTotalViewDTO;
+import biz.globalvillage.oper.param.net.NetDevOnlineParam;
+import biz.globalvillage.oper.param.net.NetOperGeneralParam;
+import biz.globalvillage.oper.param.net.NetTotalViewParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/oper/net/oper")
@@ -15,8 +27,9 @@ public class NetOperController {
      *
      */
     @PostMapping("/countByType")
-    public Result countNetByType(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<Map<Integer, Integer>> countNetByType(){
+        HashMap<Integer, Integer> map = new HashMap<>();
+        return ResponseUtil.setSuccessDataResponse(map);
     }
 
     /**
@@ -24,8 +37,9 @@ public class NetOperController {
      *
      */
     @PostMapping("/salesGeneralCount")
-    public Result salesGeneralCount(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<NetOperGeneralDTO> salesGeneralCount(NetOperGeneralParam param){
+        NetOperGeneralDTO dto = new NetOperGeneralDTO();
+        return ResponseUtil.setSuccessDataResponse(dto);
     }
 
     /**
@@ -33,8 +47,9 @@ public class NetOperController {
      *
      */
     @PostMapping("/total/view/one")
-    public Result OneNetTotalView(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<NetTotalViewDTO> OneNetTotalView(NetTotalViewParam param){
+        NetTotalViewDTO dto = new NetTotalViewDTO();
+        return ResponseUtil.setSuccessDataResponse(dto);
     }
 
     /**
@@ -43,8 +58,9 @@ public class NetOperController {
      *
      */
     @PostMapping("/device/onoffline/general/one")
-    public Result getOneNetOnOffLineDeviceGeneral(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<NetDevOnlineDTO> getOneNetOnOffLineDeviceGeneral(NetDevOnlineParam param){
+        NetDevOnlineDTO dto = new NetDevOnlineDTO();
+        return ResponseUtil.setSuccessDataResponse(dto);
     }
 
 
@@ -55,8 +71,9 @@ public class NetOperController {
      * 网点管理->实时运营->头部的五项统计值
      */
     @PostMapping("/total/view/all")
-    public Result AllNetTotalView(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<NetTotalViewDTO> AllNetTotalView(){
+        NetTotalViewDTO dto = new NetTotalViewDTO();
+        return ResponseUtil.setSuccessDataResponse(dto);
     }
 
     /**
@@ -65,8 +82,9 @@ public class NetOperController {
      *
      */
     @PostMapping("/device/onoffline/general/all")
-    public Result getAllNetOnOffLineDeviceGeneral(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<NetDevOnlineDTO> getAllNetOnOffLineDeviceGeneral(){
+        NetDevOnlineDTO dto = new NetDevOnlineDTO();
+        return ResponseUtil.setSuccessDataResponse(dto);
     }
 
     /**
@@ -74,8 +92,9 @@ public class NetOperController {
      * 网点管理->实时运营->过去30天网点增长曲线
      */
     @PostMapping("/netNum/incr")
-    public Result netNumIncr(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<List<NetOperIncrDTO>> netNumIncr(){
+        List<NetOperIncrDTO> list = new ArrayList<>();
+        return ResponseUtil.setSuccessDataResponse(list);
     }
 
     /**
@@ -83,8 +102,9 @@ public class NetOperController {
      * 网点管理->实时运营->过去30天网点设备数增长曲线
      */
     @PostMapping("/deviceNum/incr")
-    public Result deviceNumIncr(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<List<NetOperIncrDTO>> deviceNumIncr(){
+        List<NetOperIncrDTO> list = new ArrayList<>();
+        return ResponseUtil.setSuccessDataResponse(list);
     }
 
     /**
@@ -92,8 +112,9 @@ public class NetOperController {
      * 网点管理->实时运营->过去30天设备绑定数增长曲线
      */
     @PostMapping("/bindCount/incr")
-    public Result bindCountIncr(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<List<NetOperIncrDTO>> bindCountIncr(){
+        List<NetOperIncrDTO> list = new ArrayList<>();
+        return ResponseUtil.setSuccessDataResponse(list);
     }
 
     /**
@@ -101,8 +122,9 @@ public class NetOperController {
      * 网点管理->实时运营->过去30天订单数量增长曲线
      */
     @PostMapping("/orderNum/incr")
-    public Result orderNumIncr(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<List<NetOperIncrDTO>> orderNumIncr(){
+        List<NetOperIncrDTO> list = new ArrayList<>();
+        return ResponseUtil.setSuccessDataResponse(list);
     }
 
     /**
@@ -110,8 +132,9 @@ public class NetOperController {
      * 网点管理->实时运营->过去30天网点订单总金额增长曲线
      */
     @PostMapping("/orderAmount/incr")
-    public Result orderAmountIncr(){
-        return ResponseUtil.setDefaultSuccessResponse();
+    public Result<List<NetOperIncrDTO>> orderAmountIncr(){
+        List<NetOperIncrDTO> list = new ArrayList<>();
+        return ResponseUtil.setSuccessDataResponse(list);
     }
 
 
