@@ -2,31 +2,35 @@ package biz.globalvillage.oper.controller.school;
 
 import biz.globalvillage.airmap.bean.res.Result;
 import biz.globalvillage.airmap.utils.resp.ResponseUtil;
+import biz.globalvillage.oper.dto.school.*;
+import biz.globalvillage.oper.param.school.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/oper/school")
 public class SchoolController2 {
 
     @PostMapping("/list")
-    public Result getSchoolList(){
+    public Result<List<SchoolListDTO>> getSchoolList(SchoolListParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
     @PostMapping("/detail")
-    public Result getSchoolDetail(){
+    public Result<SchoolDetailDTO> getSchoolDetail(SchoolDetailParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
     @PostMapping("/save")
-    public Result saveSchool(){
+    public Result<Boolean> saveSchool(SaveSchoolParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
     @PostMapping("/grade/list")
-    public Result getGradeList(){
+    public Result<List<GradeListDTO>> getGradeList(){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -41,7 +45,7 @@ public class SchoolController2 {
     }
 
     @PostMapping("/service/open")
-    public Result openService(){
+    public Result openService(SchoolOpenServiceParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -50,7 +54,7 @@ public class SchoolController2 {
      * @return
      */
     @PostMapping("/live/device/list")
-    public Result getSchoolLiveDeviceList(){
+    public Result<List<SchoolLiveDeviceListDTO>> getSchoolLiveDeviceList(SchoolListParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 
@@ -59,7 +63,7 @@ public class SchoolController2 {
      * @return
      */
     @PostMapping("/live/device/general")
-    public Result getSchoolLiveDeviceGeneral(){
+    public Result<SchoolLiveDeviceGeneralDTO> getSchoolLiveDeviceGeneral(SchoolLiveDeviceGeneralParam param){
         return ResponseUtil.setDefaultSuccessResponse();
     }
 }
