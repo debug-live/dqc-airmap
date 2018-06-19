@@ -43,9 +43,10 @@ public class UserController {
         /**
          *  将用户与小程序的openId绑定
          *
-         *  1.判断用户是否存在
-         *    1.1 存在，则更新用户，将openId与用户绑定
-         *    1.2 不存在，开启注册新用户的流程，然后再将openId与用户绑定
+         *  1.获取验证码（不能随便瞎填手机号）
+         *  2.判断用户是否存在
+         *    2.1 存在，则更新用户，将openId与用户绑定
+         *    2.2 不存在，开启注册新用户的流程，然后再将openId与用户绑定。
          *
          */
         return ResponseUtil.setDefaultSuccessResponse();
