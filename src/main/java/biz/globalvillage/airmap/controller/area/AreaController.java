@@ -14,6 +14,13 @@ public class AreaController {
 
     @PostMapping("/getByLatAndLng")
     public Result getAreaByLatAndLng(GetAreaByLatAndLngParam param){
+        /**
+         * 根据经纬度获取地区代码
+         * 1.调用高德接口获取相应的地区代码
+         *
+         * 问题：如果行政地区编码已经发生变更，该如何处理？
+         * 目前的做法是，创建新的地区行政编码
+         */
         Area area = new Area();
         return ResponseUtil.setSuccessDataResponse(area);
     }
