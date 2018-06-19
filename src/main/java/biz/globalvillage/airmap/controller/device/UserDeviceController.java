@@ -38,6 +38,8 @@ public class UserDeviceController {
     public Result removeUserDevice(UserDeviceRemoveParam param){
         //TODO
         /**
+         * 将设备从设备列表中移除
+         *
          * 1. 移除用户和设备的绑定关系
          * 2. 移除用户和设备关于mqtt报文的订阅关系
          * 3. 如果是班级设备，需要删除用户和班级的关联关系
