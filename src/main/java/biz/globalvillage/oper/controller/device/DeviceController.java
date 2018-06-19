@@ -146,4 +146,30 @@ public class DeviceController {
     }
 
 
+    /**
+     * 设备发起获取SN的请求（该请求由设备发起）
+     *
+     */
+    @PostMapping("/sn/download")
+    public Result downLoadSn(DeviceSnDownLoadParam param){
+        return ResponseUtil.setDefaultSuccessResponse();
+    }
+
+    /**
+     * 设备确认sn已经烧录
+     *
+     */
+    @PostMapping("/sn/download/confirm")
+    public Result downLoadSnConfirm(DeviceSnDownLoadConfirmParam param){
+        return ResponseUtil.setDefaultSuccessResponse();
+    }
+
+    /**
+     * 设备发起激活请求
+     *
+     */
+    @PostMapping("/active")
+    public Result active(DeviceActiveParam param){
+        return ResponseUtil.setDefaultSuccessResponse();
+    }
 }
